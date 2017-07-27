@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{% block title %}Site Title{% endblock %}</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Critical CSS -->
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<style>{{ './front-end/dist/assets/css/critical.css' | outputFileContent | safe}}</style>
+	<!--<![endif]-->
+
+	<!-- Critical JS -->
+	<script>{{ './front-end/dist/assets/js/common.min.js' | outputFileContent | safe}}</script>
+
+	<!-- Lazy-load CSS -->
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script>loadCSS('../assets/css/styles.css');</script>
+	<noscript><link rel="stylesheet" href="assets/css/styles.css?v={{timestamp}}"></noscript>
+	<!--<![endif]-->
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="assets/css/styles.css?v={{timestamp}}">
+	<![endif]-->
+
+	{% block head %}
+	{% endblock %}
+</head>
+
+<body class="{% block pageClass %}{% endblock %}">
+	<header class="site-header" role="banner">
+		<div class="skip-links">
+			<a href="#navigation" class="skip">Skip to navigation</a>
+			<a href="#main" class="skip">Skip to main content</a>
+			<a href="#footer" class="skip">Skip to footer</a>
+		</div>
+
+		<a href="#" class="site-header__logo"></a>
+		{% block nav %}
+		<nav role="navigation" id="navigation" class="site-nav">
+		
+		</nav>
+		{% endblock %}
+
+	</header>
+
+	<main class="main" id="main" role="main">
+		{% block content %}
+		{% endblock %}
+	</main>
+
+
+
+	<footer class="site-footer" id="footer">
+
+	</footer>
+
+</body>
+<script src="assets/js/scripts.min.js" defer></script>
+{% block footer %}
+{% endblock %}
+
+</html>

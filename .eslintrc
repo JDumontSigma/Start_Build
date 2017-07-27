@@ -1,0 +1,20 @@
+{
+  "extends": "semistandard",
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
+  "globals": {
+    "ga": true
+  },
+  "rules": {
+    # Allow empty opening line in blocks
+    "padded-blocks": 0,
+
+    # Allow 'else' on own line
+    "brace-style": [
+      "error",
+      "stroustrup"
+    ]
+  }
+}
