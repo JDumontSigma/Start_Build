@@ -10,7 +10,7 @@ module.exports = ( paths, gulp, plugins ) => {
   return () => {
 
 		// Copy assets
-    return gulp.src('./node_modules/font-awesome/fonts/**.*')
+    return gulp.src(['./node_modules/font-awesome/fonts/**.*', `${paths.app}/assets/fonts/**`]) 
 			.pipe(gulp.dest(`${paths.dist}/assets/fonts`))
 			.pipe(gulp.dest(`${paths.server}/assets/fonts`))
 			.pipe(plugins.preservetime())

@@ -1,16 +1,29 @@
-h1, h2, h3, h4, h5, h6 {
-    font-family: sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: sans-serif;
 }
-body{
-    font-family: sans-serif;
+
+body {
+	font-family: sans-serif;
 }
-.wf-loaded{
-    h1, h2, h3, h4, h5, h6 {
-    font-family: 'heading', sans-serif;
-    font-weight: normal;
-    }
-    body{
-        font-family: 'body', sans-serif;
-        font-weight: normal;
-    }
+
+.wf-loaded {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'heading', sans-serif;
+		font-weight: normal;
+	}
+
+	body {
+		font-family: 'body', sans-serif;
+		font-weight: normal;
+	}
 }
