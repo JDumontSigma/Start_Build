@@ -9,3 +9,8 @@ new FontFaceObserver('body').load()
   .then(function () {
     document.body.classList.add('wf-loaded');
   });
+
+let test = 2,
+  stringAlert = `this is a test for ${test}`;
+
+  alert(stringAlert);
