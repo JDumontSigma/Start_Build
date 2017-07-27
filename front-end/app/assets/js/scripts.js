@@ -13,4 +13,4 @@ new FontFaceObserver('body').load()
 let test = 2,
   stringAlert = `this is a test for ${test}`;
 
-  alert(stringAlert);
+alert(stringAlert);

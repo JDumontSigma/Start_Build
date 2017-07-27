@@ -10,7 +10,15 @@
   "rules": {
     # Allow empty opening line in blocks
     "padded-blocks": 0,
-
+    #one variable declatation
+    one-var: [
+      "error",
+      {
+        var: "always",
+        let: "always",
+        const: "always"
+      }
+    ],
     # Allow 'else' on own line
     "brace-style": [
       "error",
