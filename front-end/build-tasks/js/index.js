@@ -11,7 +11,8 @@ module.exports = ( paths, gulp, plugins ) => {
   var webpack = require('webpack');
   var named = require('vinyl-named'),
       babel = require('gulp-babel'),
-      UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+      UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
+      DashboardPlugin = require('webpack-dashboard/plugin');
 
 	// Webpack options
   var options = {
@@ -25,7 +26,7 @@ module.exports = ( paths, gulp, plugins ) => {
     module: {
           rules: [
             {
-              test: /\.js$/,
+              test: [/\.js$/, /\.jsx$/],
               exclude: /(node_modules|bower_components)/,
               use: {
                 loader: 'babel-loader',
@@ -39,7 +40,7 @@ module.exports = ( paths, gulp, plugins ) => {
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
-          'NODE_ENV': 'production'
+          'NODE_ENV': "'production'"
         }
       }),
       new webpack.optimize.CommonsChunkPlugin({
@@ -58,7 +59,8 @@ module.exports = ( paths, gulp, plugins ) => {
           comments: false
         },
         sourceMap: true
-      })
+      }),
+      new DashboardPlugin()
     ]
   };
 
